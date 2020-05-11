@@ -1,0 +1,7 @@
+#!/usr/bin/expect
+spawn /home/ansible_user/passwd_less_script.sh
+expect -exact "Are you sure you want to continue connecting (yes/no)?\r"
+send -- "yes\r"
+expect -exact "ansible_user@new_hostname's password:\r"
+send -- "ansible_pass\r"
+expect eof
